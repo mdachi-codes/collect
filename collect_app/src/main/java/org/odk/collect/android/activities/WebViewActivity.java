@@ -16,7 +16,9 @@ package org.odk.collect.android.activities;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -39,6 +41,7 @@ public class WebViewActivity extends LocalizedActivity {
         setContentView(R.layout.activity_web_view);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.pact_logo_medium);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);

@@ -212,7 +212,7 @@ import timber.log.Timber;
 /**
  * FormFillingActivity is responsible for displaying questions, animating
  * transitions between questions, and allowing the user to enter data.
- *
+ * <p>
  * This class should never be started directly. Instead {@link org.odk.collect.android.external.FormUriActivity}
  * should be used to start form filling.
  *
@@ -746,8 +746,10 @@ public class FormFillingActivity extends LocalizedActivity implements AnimationL
 
     private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.pact_logo_medium);
         setSupportActionBar(toolbar);
-        setTitle(getString(R.string.loading_form));
+        setTitle("  " + getString(R.string.loading_form));
+
     }
 
     /**
@@ -1125,7 +1127,7 @@ public class FormFillingActivity extends LocalizedActivity implements AnimationL
         FormController formController = getFormController();
 
         String formTitle = formController.getFormTitle();
-        setTitle(formTitle);
+        setTitle("  " + formTitle);
 
         if (event != FormEntryController.EVENT_QUESTION) {
             formController.getAuditEventLogger().logEvent(AuditEvent.getAuditEventTypeFromFecType(event),

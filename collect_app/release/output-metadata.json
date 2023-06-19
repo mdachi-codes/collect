@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "org.odk.collect.android",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 4659,
+      "versionName": "419844e1c-dirty",
+      "outputFile": "collect-release-419844e1c-dirty.apk"
+    }
+  ],
+  "elementType": "File"
+}

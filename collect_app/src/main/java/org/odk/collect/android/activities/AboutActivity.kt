@@ -61,6 +61,7 @@ class AboutActivity : LocalizedActivity(), AboutItemClickListener {
     private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         title = getString(R.string.about_preferences)
+        toolbar.setLogo(R.drawable.pact_logo_medium)
         setSupportActionBar(toolbar)
     }
 

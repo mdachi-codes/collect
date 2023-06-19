@@ -31,6 +31,7 @@ import android.widget.ProgressBar;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 
@@ -142,8 +143,10 @@ public abstract class AppListActivity extends LocalizedActivity {
         // Use the nicer-looking drawable with Material Design insets.
         listView.setDivider(ContextCompat.getDrawable(this, R.drawable.list_item_divider));
         listView.setDividerHeight(1);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.pact_logo_medium);
 
-        setSupportActionBar(findViewById(R.id.toolbar));
+        setSupportActionBar(toolbar);
     }
 
     @Override

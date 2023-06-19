@@ -371,7 +371,7 @@ abstract class Page<T : Page<T>> {
     }
 
     protected fun assertToolbarTitle(title: String?) {
-        onView(allOf(withText(title), isDescendantOfA(withId(R.id.toolbar)))).check(matches(isDisplayed()))
+        onView(allOf(withText(title),isDescendantOfA(withId(R.id.toolbar)))).check(matches(isDisplayed()))
     }
 
     protected fun assertToolbarTitle(title: Int) {

@@ -141,7 +141,7 @@ public class FormDownloadListActivity extends FormListActivity implements FormLi
         DaggerUtils.getComponent(this).inject(this);
 
         setContentView(R.layout.form_download_list);
-        setTitle(getString(R.string.get_forms));
+        setTitle("  "+getString(R.string.get_forms));
 
         viewModel = new ViewModelProvider(this, new FormDownloadListViewModel.Factory())
                 .get(FormDownloadListViewModel.class);

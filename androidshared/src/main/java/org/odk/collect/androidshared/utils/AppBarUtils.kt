@@ -11,7 +11,9 @@ object AppBarUtils {
     fun setupAppBarLayout(activity: Activity, title: CharSequence) {
         val toolbar = activity.findViewById<Toolbar>(R.id.toolbar)
         if (toolbar != null && activity is AppCompatActivity) {
-            toolbar.title = title
+            toolbar.title = "  "+title
+            toolbar.setLogo(R.drawable.pact_logo_medium)
+
             activity.setSupportActionBar(toolbar)
         }
     }

@@ -27,15 +27,15 @@ class MainMenuViewModel(
         get() {
             var commitDescription = ""
             if (versionInformation.commitCount != null) {
-                commitDescription =
-                    appendToCommitDescription(commitDescription, versionInformation.commitCount.toString())
+//                commitDescription =
+//                    appendToCommitDescription(commitDescription, versionInformation.commitCount.toString())
             }
             if (versionInformation.commitSHA != null) {
-                commitDescription =
-                    appendToCommitDescription(commitDescription, versionInformation.commitSHA!!)
+//                commitDescription =
+//                    appendToCommitDescription(commitDescription, versionInformation.commitSHA!!)
             }
             if (versionInformation.isDirty) {
-                commitDescription = appendToCommitDescription(commitDescription, "dirty")
+//                commitDescription = appendToCommitDescription(commitDescription, "dirty")
             }
             return if (commitDescription.isNotEmpty()) {
                 commitDescription
@@ -45,28 +45,36 @@ class MainMenuViewModel(
         }
 
     fun shouldEditSavedFormButtonBeVisible(): Boolean {
-        return settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_EDIT_SAVED)
+        return settingsProvider.getProtectedSettings()
+            .getBoolean(ProtectedProjectKeys.KEY_EDIT_SAVED)
     }
 
     fun shouldSendFinalizedFormButtonBeVisible(): Boolean {
-        return settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_SEND_FINALIZED)
+        return settingsProvider.getProtectedSettings()
+            .getBoolean(ProtectedProjectKeys.KEY_SEND_FINALIZED)
     }
 
     fun shouldViewSentFormButtonBeVisible(): Boolean {
-        return settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_VIEW_SENT)
+        return settingsProvider.getProtectedSettings()
+            .getBoolean(ProtectedProjectKeys.KEY_VIEW_SENT)
     }
 
     fun shouldGetBlankFormButtonBeVisible(): Boolean {
-        val buttonEnabled = settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_GET_BLANK)
+        val buttonEnabled =
+            settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_GET_BLANK)
         return !isMatchExactlyEnabled() && buttonEnabled
     }
 
     fun shouldDeleteSavedFormButtonBeVisible(): Boolean {
-        return settingsProvider.getProtectedSettings().getBoolean(ProtectedProjectKeys.KEY_DELETE_SAVED)
+        return settingsProvider.getProtectedSettings()
+            .getBoolean(ProtectedProjectKeys.KEY_DELETE_SAVED)
     }
 
     private fun isMatchExactlyEnabled(): Boolean {
-        return SettingsUtils.getFormUpdateMode(application, settingsProvider.getUnprotectedSettings()) == FormUpdateMode.MATCH_EXACTLY
+        return SettingsUtils.getFormUpdateMode(
+            application,
+            settingsProvider.getUnprotectedSettings()
+        ) == FormUpdateMode.MATCH_EXACTLY
     }
 
     private fun appendToCommitDescription(commitDescription: String, part: String): String {

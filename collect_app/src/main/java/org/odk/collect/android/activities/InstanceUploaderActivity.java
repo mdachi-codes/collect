@@ -106,7 +106,7 @@ public class InstanceUploaderActivity extends LocalizedActivity implements Insta
     private void init(Bundle savedInstanceState) {
         alertMsg = getString(R.string.please_wait);
 
-        setTitle(getString(R.string.send_data));
+        setTitle("  " + getString(R.string.send_data));
 
         // Get simple saved state
         if (savedInstanceState != null) {
@@ -315,7 +315,7 @@ public class InstanceUploaderActivity extends LocalizedActivity implements Insta
     /**
      * Prompts the user for credentials for the server at the given URL. Once credentials are
      * provided, starts a new upload task with just the instances that were not yet reached.
-     *
+     * <p>
      * messagesByInstanceIdAttempted makes it possible to identify the instances that were part
      * of the latest submission attempt. The database provides generic status which could have come
      * from an unrelated submission attempt.

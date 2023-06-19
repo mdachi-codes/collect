@@ -193,6 +193,7 @@ public class FormHierarchyActivity extends LocalizedActivity implements DeleteRe
 
         TextView emptyView = findViewById(android.R.id.empty);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.pact_logo_medium);
         setSupportActionBar(toolbar);
 
         formEntryViewModel = new ViewModelProvider(this, viewModelFactory).get(FormEntryViewModel.class);
@@ -205,7 +206,7 @@ public class FormHierarchyActivity extends LocalizedActivity implements DeleteRe
 
         startIndex = formController.getFormIndex();
 
-        setTitle(formController.getFormTitle());
+        setTitle("  "+formController.getFormTitle());
 
         groupPathTextView = findViewById(R.id.pathtext);
 

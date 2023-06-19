@@ -54,23 +54,23 @@ class FirstLaunchActivity : LocalizedActivity() {
                 )
             }
 
-            appName.text = String.format(
-                "%s %s",
-                getString(R.string.collect_app_name),
-                versionInformation.versionToDisplay
-            )
+//            appName.text = String.format(
+//                "%s %s",
+//                getString(R.string.collect_app_name),
+//                versionInformation.versionToDisplay
+//            )
 
-            configureLater.addOnClickListener {
-                Analytics.log(AnalyticsEvents.TRY_DEMO)
-
-                projectsRepository.save(Project.DEMO_PROJECT)
-                currentProjectProvider.setCurrentProject(Project.DEMO_PROJECT_ID)
-
-                ActivityUtils.startActivityAndCloseAllOthers(
-                    this@FirstLaunchActivity,
-                    MainMenuActivity::class.java
-                )
-            }
+//            configureLater.addOnClickListener {
+//                Analytics.log(AnalyticsEvents.TRY_DEMO)
+//
+//                projectsRepository.save(Project.DEMO_PROJECT)
+//                currentProjectProvider.setCurrentProject(Project.DEMO_PROJECT_ID)
+//
+//                ActivityUtils.startActivityAndCloseAllOthers(
+//                    this@FirstLaunchActivity,
+//                    MainMenuActivity::class.java
+//                )
+//            }
         }
     }
 }

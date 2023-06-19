@@ -136,7 +136,8 @@ public class GoogleDriveActivity extends FormListActivity implements View.OnClic
 
     private void initToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setTitle(getString(R.string.google_drive));
+        toolbar.setLogo(R.drawable.pact_logo_medium);
+        setTitle("  " + getString(R.string.google_drive));
         setSupportActionBar(toolbar);
     }
 

@@ -85,10 +85,10 @@ public class InstanceChooserList extends AppListActivity implements AdapterView.
 
         String formMode = getIntent().getStringExtra(ApplicationConstants.BundleKeys.FORM_MODE);
         if (formMode == null || ApplicationConstants.FormModes.EDIT_SAVED.equalsIgnoreCase(formMode)) {
-            setTitle(getString(R.string.review_data));
+            setTitle("  " + getString(R.string.review_data));
             editMode = true;
         } else {
-            setTitle(getString(R.string.view_sent_forms));
+            setTitle("  " + getString(R.string.view_sent_forms));
             ((TextView) findViewById(android.R.id.empty)).setText(R.string.no_items_display_sent_forms);
         }
 

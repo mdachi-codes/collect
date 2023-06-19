@@ -38,6 +38,7 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.lifecycle.LiveData;
@@ -155,7 +156,7 @@ public class InstanceUploaderListActivity extends LocalizedActivity implements
         });
 
         // set title
-        setTitle(getString(R.string.send_data));
+        setTitle("  " + getString(R.string.send_data));
         binding = InstanceUploaderListBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
         binding.uploadButton.setOnClickListener(v -> onUploadButtonsClicked());
@@ -200,7 +201,9 @@ public class InstanceUploaderListActivity extends LocalizedActivity implements
         listView.setDivider(ContextCompat.getDrawable(this, R.drawable.list_item_divider));
         listView.setDividerHeight(1);
 
-        setSupportActionBar(findViewById(R.id.toolbar));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.drawable.pact_logo_medium);
+        setSupportActionBar(toolbar);
 
         init();
     }

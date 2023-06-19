@@ -99,7 +99,7 @@ class MainMenuActivity : LocalizedActivity() {
 
         currentProjectViewModel.currentProject.observe(this) { (_, name): Saved ->
             invalidateOptionsMenu()
-            title = name
+            title = "  " + name
         }
 
         initToolbar()
@@ -174,6 +174,7 @@ class MainMenuActivity : LocalizedActivity() {
 
     private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setLogo(R.drawable.pact_logo_medium)
         setSupportActionBar(toolbar)
     }
 
@@ -264,9 +265,16 @@ class MainMenuActivity : LocalizedActivity() {
             mainMenuViewModel.version
         )
 
+        binding.appName.text = String.format(
+            "%s %s",
+            "",
+            ""
+        )
+
         val versionSHA = mainMenuViewModel.versionCommitDescription
         if (versionSHA != null) {
-            binding.versionSha.text = versionSHA
+//            binding.versionSha.text = "versionSHA"
+            binding.versionSha.text = "";
         } else {
             binding.versionSha.visibility = View.GONE
         }

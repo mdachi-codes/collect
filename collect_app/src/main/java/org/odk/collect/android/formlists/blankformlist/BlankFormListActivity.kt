@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.RecyclerView
 import org.odk.collect.android.R
 import org.odk.collect.android.activities.FormMapActivity
@@ -41,7 +42,10 @@ class BlankFormListActivity : LocalizedActivity(), OnFormItemClickListener {
         DaggerUtils.getComponent(this).inject(this)
         setContentView(R.layout.activity_blank_form_list)
         title = getString(R.string.enter_data)
-        setSupportActionBar(findViewById(R.id.toolbar))
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setLogo(R.drawable.pact_logo_medium);
+        setSupportActionBar(toolbar)
 
         val menuProvider = BlankFormListMenuProvider(this, viewModel, networkStateProvider)
         addMenuProvider(menuProvider, this)
